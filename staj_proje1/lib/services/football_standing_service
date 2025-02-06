@@ -1,0 +1,75 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+class FootballStandingsService {  static const String _apiUrl =
+      "https://api.collectapi.com/football/league"; // Doğru endpoint'i kullanın
+  static const String _apiKey =
+      "apikey 2Rd5ae3MgL0YyDdUFHGjMY:0gEEOQB4Vm0L16ispHTvBF"; // Kendi API Key'inizi ekleyin
+
+  static Future<List<Standings>> fetchStandings(String leagueKey) async {
+    try {
+      final response = await http.get(
+        Uri.parse("$_apiUrl?data.league=$leagueKey"),
+        headers: {
+          "Authorization": _apiKey,
+          "Content-Type": "application/json",
+        },
+      );
+
+      print("📢 API Response: ${response.body}"); // API yanıtını kontrol edin
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        if (data["success"] == true) {
+          List standings = data["result"];
+          return standings.map((team) => Standings.fromJson(team)).toList();
+        }
+      }
+      throw Exception("⚠️ Puan durumu çekilemedi.");
+    } catch (e) {
+      throw Exception("❌ Hata: $e");
+    }
+  }
+}
+
+class Standings {
+  final String rank;
+  final String team;
+  final String play;
+  final String win;
+  final String lose;
+  final String point;
+  final String draw;
+  final String goalfor;
+  final String goalagainst;  
+  final String goaldistance;
+
+
+  Standings({
+    required this.rank,
+    required this.team,
+    required this.play,
+    required this.win,
+    required this.lose,
+    required this.point,
+    required this.draw,
+    required this.goalfor,
+    required this.goalagainst,
+    required this.goaldistance,
+  });
+
+  factory Standings.fromJson(Map<String, dynamic> json) {
+    return Standings(
+      rank: json["rank"]?.toString() ?? "Bilinmiyor",
+      team: json["team"]?.toString() ?? "Bilinmiyor",
+      play: json["play"]?.toString() ?? "0",
+      win: json["win"]?.toString() ?? "0",
+      lose: json["lose"]?.toString() ?? "0",
+      point: json["point"]?.toString() ?? "0",
+      draw: json["draw"]?.toString() ?? "0",
+      goalfor: json["goalfor"]?.toString() ?? "0",
+      goalagainst: json["goalagainst"]?.toString() ?? "0",
+      goaldistance: json["goaldistance"]?.toString() ?? "0",
+    );
+  }
+}
