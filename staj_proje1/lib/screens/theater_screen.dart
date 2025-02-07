@@ -64,7 +64,7 @@ class _TiyatroScreenState extends State<TiyatroScreen> {
         url,
         headers: {
           'authorization':
-              'apikey 65G32DrvnaUtMzoftxQHvg:64ociZDHG9hGKllIYwRXP8',
+              ' ',
           'content-type': 'application/json',
         },
       );

@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:staj_proje1/screens/restaurant_detail_screen.dart';
 
 const String yelpApiKey =
-    'ZQ_Rx1misHRgHM8zil0b6_zdNil0B5OoN8UMBGP_L6EMEXBHysm08arOEgfo9pa4ae5TbH3cKTkZLgUQXQXL5027gJtBHje0khTtiQRmhpRmpNMuMu0wXfbcVEajZ3Yx';
+    '';
 
 class YelpRestaurantsScreen extends StatefulWidget {
   final String langCode;

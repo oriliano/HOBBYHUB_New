@@ -189,7 +189,7 @@ class _MovieScreenState extends State<MovieScreen> {
           'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=$page');
       final resp = await http.get(url, headers: {
         'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTAwNDZmNjQzOTJjNDBmMTRiZWI5OWE4NWUxZmFlZCIsIm5iZiI6MTczODY2NTM1OS44ODksInN1YiI6IjY3YTFlZDhmMzgwYjg2YWNkOTAyZmJmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xo_Wp1Soy7TGZx9YAb5XGHg7krqyrPZ8ohhCukAMcP8',
+            '',
         'accept': 'application/json',
       });
       if (resp.statusCode == 200) {
