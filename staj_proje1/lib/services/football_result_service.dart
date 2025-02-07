@@ -7,7 +7,7 @@ class FootballFixturesService {
   static const String _apiUrl =
       "https://api.collectapi.com/football/results"; // Doğru endpoint'i kullanın
   static const String _apiKey =
-      "apikey 2Rd5ae3MgL0YyDdUFHGjMY:0gEEOQB4Vm0L16ispHTvBF"; // Kendi API Key'inizi ekleyin
+      ""; // Kendi API Key'inizi ekleyin
 
   static Future<List<Fixture>> fetchFixtures(String leagueKey) async {
     try {
