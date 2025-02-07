@@ -179,8 +179,7 @@ class _TvScreenState extends State<TvScreen> {
       final resp = await http.get(
         url,
         headers: {
-          'Authorization':
-              '',
+          'Authorization': '',
           'accept': 'application/json',
         },
       );
@@ -234,8 +233,7 @@ class _TvScreenState extends State<TvScreen> {
       final resp = await http.get(
         url,
         headers: {
-          'Authorization':
-              'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTAwNDZmNjQzOTJjNDBmMTRiZWI5OWE4NWUxZmFlZCIsIm5iZiI6MTczODY2NTM1OS44ODksInN1YiI6IjY3YTFlZDhmMzgwYjg2YWNkOTAyZmJmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xo_Wp1Soy7TGZx9YAb5XGHg7krqyrPZ8ohhCukAMcP8',
+          'Authorization': '',
           'accept': 'application/json',
         },
       );

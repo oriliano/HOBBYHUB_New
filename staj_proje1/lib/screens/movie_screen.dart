@@ -155,11 +155,7 @@ class _MovieScreenState extends State<MovieScreen> {
     try {
       final url = Uri.parse(
           'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1');
-      final resp = await http.get(url, headers: {
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTAwNDZmNjQzOTJjNDBmMTRiZWI5OWE4NWUxZmFlZCIsIm5iZiI6MTczODY2NTM1OS44ODksInN1YiI6IjY3YTFlZDhmMzgwYjg2YWNkOTAyZmJmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xo_Wp1Soy7TGZx9YAb5XGHg7krqyrPZ8ohhCukAMcP8',
-        'accept': 'application/json',
-      });
+      final resp = await http.get(url, headers: {'Authorization': ' '});
       if (resp.statusCode == 200) {
         final data = json.decode(resp.body);
         final results = data['results'] ?? [];
@@ -188,8 +184,7 @@ class _MovieScreenState extends State<MovieScreen> {
       final url = Uri.parse(
           'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=$page');
       final resp = await http.get(url, headers: {
-        'Authorization':
-            '',
+        'Authorization': '',
         'accept': 'application/json',
       });
       if (resp.statusCode == 200) {
@@ -234,8 +229,7 @@ class _MovieScreenState extends State<MovieScreen> {
       final url = Uri.parse(
           'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=$page');
       final resp = await http.get(url, headers: {
-        'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZTAwNDZmNjQzOTJjNDBmMTRiZWI5OWE4NWUxZmFlZCIsIm5iZiI6MTczODY2NTM1OS44ODksInN1YiI6IjY3YTFlZDhmMzgwYjg2YWNkOTAyZmJmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xo_Wp1Soy7TGZx9YAb5XGHg7krqyrPZ8ohhCukAMcP8',
+        'Authorization': '',
         'accept': 'application/json',
       });
       if (resp.statusCode == 200) {
